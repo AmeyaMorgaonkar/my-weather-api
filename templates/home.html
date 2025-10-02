@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data API</title>
+</head>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+<body>
+    <h1>Weather Data API</h1>
+    <p><span style="font-size: large; font-weight: bolder;">URL Format: </span>http://127.0.0.1:5000/<span style="font-weight: bold;">api/station-id/date</span></p>
+    <p>e.g. <a href="http://127.0.0.1:5000/api/1/1988-10-25">http://127.0.0.1:5000/api/1/1988-10-25</a></p>
+
+    <h2>Available Stations:</h2>
+
+    <p>{{data}}</p>
+
+    <table>
+        <tr>
+            <th>Station ID</th>
+            <th>Station Name</th>
+        </tr>
+
+        {% for i in range(no_of_stations) %}
+            <tr>
+                <th>{{station_id[i]}}</th>
+                <th>{{stations[i]}}</th>
+            </tr>
+        {% endfor %}
+
+    </table>
+</body>
+
+</html>
